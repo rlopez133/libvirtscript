@@ -1,0 +1,11 @@
+[Unit]
+Description=Set default storage pool and net bridges
+Requires=libvirtd.service
+After=libvirtd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/virshsetup.sh
+
+[Install]
+WantedBy=multi-user.target
